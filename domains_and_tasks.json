@@ -1,0 +1,602 @@
+[
+    {
+        "domain": "Medicine and Healthcare",
+        "task_area": "Medical diagnosis based on patient symptoms"
+    },
+    {
+        "domain": "Medicine and Healthcare",
+        "task_area": "Treatment planning for chronic diseases"
+    },
+    {
+        "domain": "Medicine and Healthcare",
+        "task_area": "Interpreting lab results (blood tests, MRI, etc.)"
+    },
+    {
+        "domain": "Medicine and Healthcare",
+        "task_area": "Drug interactions and side effects analysis"
+    },
+    {
+        "domain": "Medicine and Healthcare",
+        "task_area": "Medical ethics reasoning for patient consent"
+    },
+    {
+        "domain": "Medicine and Healthcare",
+        "task_area": "Medical research synthesis on cancer treatments"
+    },
+    {
+        "domain": "Medicine and Healthcare",
+        "task_area": "Differential diagnosis in complex medical cases"
+    },
+    {
+        "domain": "Medicine and Healthcare",
+        "task_area": "Personalized medication dosing based on genetics"
+    },
+    {
+        "domain": "Medicine and Healthcare",
+        "task_area": "Mental health counseling planning"
+    },
+    {
+        "domain": "Medicine and Healthcare",
+        "task_area": "Chronic disease management recommendations"
+    },
+    {
+        "domain": "Science and Research",
+        "task_area": "Hypothesis generation for experimental designs"
+    },
+    {
+        "domain": "Science and Research",
+        "task_area": "Data analysis of clinical trial results"
+    },
+    {
+        "domain": "Science and Research",
+        "task_area": "Modeling climate change effects on ecosystems"
+    },
+    {
+        "domain": "Science and Research",
+        "task_area": "Explaining quantum physics in simple terms"
+    },
+    {
+        "domain": "Science and Research",
+        "task_area": "Predicting genetic mutations and their effects"
+    },
+    {
+        "domain": "Science and Research",
+        "task_area": "Evaluating scientific studies on nutrition"
+    },
+    {
+        "domain": "Science and Research",
+        "task_area": "Planning an astronomy experiment for detecting exoplanets"
+    },
+    {
+        "domain": "Science and Research",
+        "task_area": "Simulating chemical reactions in drug discovery"
+    },
+    {
+        "domain": "Science and Research",
+        "task_area": "Exploring ethical implications of AI in medical research"
+    },
+    {
+        "domain": "Science and Research",
+        "task_area": "Analyzing epidemiological data to track disease outbreaks"
+    },
+    {
+        "domain": "Software Development",
+        "task_area": "Refactoring legacy code for efficiency"
+    },
+    {
+        "domain": "Software Development",
+        "task_area": "Debugging complex algorithms in Python"
+    },
+    {
+        "domain": "Software Development",
+        "task_area": "Optimizing database queries for performance"
+    },
+    {
+        "domain": "Software Development",
+        "task_area": "Building an AI model for image recognition"
+    },
+    {
+        "domain": "Software Development",
+        "task_area": "Explaining object-oriented programming concepts"
+    },
+    {
+        "domain": "Software Development",
+        "task_area": "Implementing a blockchain smart contract"
+    },
+    {
+        "domain": "Software Development",
+        "task_area": "Security vulnerability assessment in a web application"
+    },
+    {
+        "domain": "Software Development",
+        "task_area": "Designing a scalable API for cloud services"
+    },
+    {
+        "domain": "Software Development",
+        "task_area": "Writing unit tests for a machine learning model"
+    },
+    {
+        "domain": "Software Development",
+        "task_area": "Implementing a sorting algorithm from scratch"
+    },
+    {
+        "domain": "Mathematics",
+        "task_area": "Solving a complex calculus problem step-by-step"
+    },
+    {
+        "domain": "Mathematics",
+        "task_area": "Explaining abstract algebra concepts"
+    },
+    {
+        "domain": "Mathematics",
+        "task_area": "Deriving formulas for physics problems"
+    },
+    {
+        "domain": "Mathematics",
+        "task_area": "Optimizing a function using gradient descent"
+    },
+    {
+        "domain": "Mathematics",
+        "task_area": "Understanding topological spaces in math theory"
+    },
+    {
+        "domain": "Mathematics",
+        "task_area": "Solving a system of linear equations with matrix operations"
+    },
+    {
+        "domain": "Mathematics",
+        "task_area": "Designing algorithms for combinatorics problems"
+    },
+    {
+        "domain": "Mathematics",
+        "task_area": "Solving non-Euclidean geometry problems"
+    },
+    {
+        "domain": "Mathematics",
+        "task_area": "Breaking down mathematical proofs for beginner students"
+    },
+    {
+        "domain": "Mathematics",
+        "task_area": "Explaining statistical significance in a research study"
+    },
+    {
+        "domain": "Business and Economics",
+        "task_area": "Creating a financial forecast for a tech startup"
+    },
+    {
+        "domain": "Business and Economics",
+        "task_area": "Analyzing market trends for investment decisions"
+    },
+    {
+        "domain": "Business and Economics",
+        "task_area": "Developing an e-commerce business plan"
+    },
+    {
+        "domain": "Business and Economics",
+        "task_area": "Supply chain optimization for manufacturing"
+    },
+    {
+        "domain": "Business and Economics",
+        "task_area": "Risk analysis for insurance underwriting"
+    },
+    {
+        "domain": "Business and Economics",
+        "task_area": "Evaluating a merger between two companies"
+    },
+    {
+        "domain": "Business and Economics",
+        "task_area": "Monetary policy impact analysis on inflation"
+    },
+    {
+        "domain": "Business and Economics",
+        "task_area": "Negotiation strategy for international trade deals"
+    },
+    {
+        "domain": "Business and Economics",
+        "task_area": "Assessing the ROI on digital marketing campaigns"
+    },
+    {
+        "domain": "Business and Economics",
+        "task_area": "Predicting stock price movements using sentiment analysis"
+    },
+    {
+        "domain": "Engineering and Technology",
+        "task_area": "Designing a renewable energy system for a community"
+    },
+    {
+        "domain": "Engineering and Technology",
+        "task_area": "Creating a blueprint for a new mechanical device"
+    },
+    {
+        "domain": "Engineering and Technology",
+        "task_area": "Modeling fluid dynamics in aerospace engineering"
+    },
+    {
+        "domain": "Engineering and Technology",
+        "task_area": "Optimizing an electrical circuit for energy efficiency"
+    },
+    {
+        "domain": "Engineering and Technology",
+        "task_area": "Evaluating structural integrity of a bridge"
+    },
+    {
+        "domain": "Engineering and Technology",
+        "task_area": "Designing a robotics system for industrial automation"
+    },
+    {
+        "domain": "Engineering and Technology",
+        "task_area": "Simulating heat transfer in building materials"
+    },
+    {
+        "domain": "Engineering and Technology",
+        "task_area": "Creating a computer-aided design (CAD) for an engine part"
+    },
+    {
+        "domain": "Engineering and Technology",
+        "task_area": "Assessing the feasibility of a space travel project"
+    },
+    {
+        "domain": "Engineering and Technology",
+        "task_area": "Writing safety protocols for a chemical plant"
+    },
+    {
+        "domain": "Legal and Ethics",
+        "task_area": "Analyzing legal arguments in a court case"
+    },
+    {
+        "domain": "Legal and Ethics",
+        "task_area": "Creating a contract for a freelance software developer"
+    },
+    {
+        "domain": "Legal and Ethics",
+        "task_area": "Drafting a patent application for a new invention"
+    },
+    {
+        "domain": "Legal and Ethics",
+        "task_area": "Evaluating ethical considerations in surveillance technology"
+    },
+    {
+        "domain": "Legal and Ethics",
+        "task_area": "Handling legal disputes in international law"
+    },
+    {
+        "domain": "Legal and Ethics",
+        "task_area": "Understanding intellectual property law for software"
+    },
+    {
+        "domain": "Legal and Ethics",
+        "task_area": "Creating a privacy policy for a mobile app"
+    },
+    {
+        "domain": "Legal and Ethics",
+        "task_area": "Assessing antitrust issues in corporate mergers"
+    },
+    {
+        "domain": "Legal and Ethics",
+        "task_area": "Understanding the legal implications of AI-generated content"
+    },
+    {
+        "domain": "Legal and Ethics",
+        "task_area": "Mediating a dispute between business partners"
+    },
+    {
+        "domain": "Natural Language Processing",
+        "task_area": "Building a sentiment analysis model"
+    },
+    {
+        "domain": "Natural Language Processing",
+        "task_area": "Summarizing legal documents into concise notes"
+    },
+    {
+        "domain": "Natural Language Processing",
+        "task_area": "Implementing a machine translation system"
+    },
+    {
+        "domain": "Natural Language Processing",
+        "task_area": "Evaluating biases in language models"
+    },
+    {
+        "domain": "Natural Language Processing",
+        "task_area": "Generating coherent responses to ambiguous queries"
+    },
+    {
+        "domain": "Natural Language Processing",
+        "task_area": "Training a chatbot for customer support"
+    },
+    {
+        "domain": "Natural Language Processing",
+        "task_area": "Extracting named entities from text data"
+    },
+    {
+        "domain": "Natural Language Processing",
+        "task_area": "Detecting hate speech in online forums"
+    },
+    {
+        "domain": "Natural Language Processing",
+        "task_area": "Classifying articles based on topics"
+    },
+    {
+        "domain": "Natural Language Processing",
+        "task_area": "Creating a topic modeling system"
+    },
+    {
+        "domain": "Education",
+        "task_area": "Creating a personalized learning plan for students"
+    },
+    {
+        "domain": "Education",
+        "task_area": "Explaining historical events in context"
+    },
+    {
+        "domain": "Education",
+        "task_area": "Developing problem sets for advanced mathematics"
+    },
+    {
+        "domain": "Education",
+        "task_area": "Designing a curriculum for AI ethics"
+    },
+    {
+        "domain": "Education",
+        "task_area": "Simulating a classroom discussion on political philosophy"
+    },
+    {
+        "domain": "Education",
+        "task_area": "Providing feedback on student essays"
+    },
+    {
+        "domain": "Education",
+        "task_area": "Crafting interactive learning modules for biology"
+    },
+    {
+        "domain": "Education",
+        "task_area": "Explaining literary devices in Shakespearean plays"
+    },
+    {
+        "domain": "Education",
+        "task_area": "Teaching coding to beginners through interactive games"
+    },
+    {
+        "domain": "Education",
+        "task_area": "Creating educational videos on climate science"
+    },
+    {
+        "domain": "Psychology and Behavioral Science",
+        "task_area": "Developing a behavioral intervention plan for children"
+    },
+    {
+        "domain": "Psychology and Behavioral Science",
+        "task_area": "Analyzing personality traits through psychological tests"
+    },
+    {
+        "domain": "Psychology and Behavioral Science",
+        "task_area": "Creating a mental health treatment plan"
+    },
+    {
+        "domain": "Psychology and Behavioral Science",
+        "task_area": "Evaluating the efficacy of cognitive-behavioral therapy"
+    },
+    {
+        "domain": "Psychology and Behavioral Science",
+        "task_area": "Understanding human decision-making in complex tasks"
+    },
+    {
+        "domain": "Psychology and Behavioral Science",
+        "task_area": "Analyzing group dynamics in workplace settings"
+    },
+    {
+        "domain": "Psychology and Behavioral Science",
+        "task_area": "Simulating human emotions in AI systems"
+    },
+    {
+        "domain": "Psychology and Behavioral Science",
+        "task_area": "Modeling cognitive biases in economic decisions"
+    },
+    {
+        "domain": "Psychology and Behavioral Science",
+        "task_area": "Designing a study on the effects of social media on self-esteem"
+    },
+    {
+        "domain": "Psychology and Behavioral Science",
+        "task_area": "Creating a survey to measure anxiety levels"
+    },
+    {
+        "domain": "Political Science and Public Policy",
+        "task_area": "Analyzing the effects of a new policy on economic growth"
+    },
+    {
+        "domain": "Political Science and Public Policy",
+        "task_area": "Simulating election outcomes based on different voting systems"
+    },
+    {
+        "domain": "Political Science and Public Policy",
+        "task_area": "Developing a policy proposal for healthcare reform"
+    },
+    {
+        "domain": "Political Science and Public Policy",
+        "task_area": "Evaluating international relations strategies"
+    },
+    {
+        "domain": "Political Science and Public Policy",
+        "task_area": "Predicting the impact of environmental regulations"
+    },
+    {
+        "domain": "Political Science and Public Policy",
+        "task_area": "Understanding the role of lobbying in legislation"
+    },
+    {
+        "domain": "Political Science and Public Policy",
+        "task_area": "Drafting a policy brief on cyber security"
+    },
+    {
+        "domain": "Political Science and Public Policy",
+        "task_area": "Analyzing historical political decisions in the context of war"
+    },
+    {
+        "domain": "Political Science and Public Policy",
+        "task_area": "Modeling the effects of taxation on different income groups"
+    },
+    {
+        "domain": "Political Science and Public Policy",
+        "task_area": "Explaining the impact of media bias on public opinion"
+    },
+    {
+        "domain": "Creative and Media Industries",
+        "task_area": "Developing a storyboard for a film"
+    },
+    {
+        "domain": "Creative and Media Industries",
+        "task_area": "Writing a novel outline using narrative structures"
+    },
+    {
+        "domain": "Creative and Media Industries",
+        "task_area": "Creating a marketing plan for a new product"
+    },
+    {
+        "domain": "Creative and Media Industries",
+        "task_area": "Designing a user interface for a mobile app"
+    },
+    {
+        "domain": "Creative and Media Industries",
+        "task_area": "Explaining color theory in graphic design"
+    },
+    {
+        "domain": "Creative and Media Industries",
+        "task_area": "Developing a social media content strategy for influencers"
+    },
+    {
+        "domain": "Creative and Media Industries",
+        "task_area": "Simulating a music recommendation system based on user taste"
+    },
+    {
+        "domain": "Creative and Media Industries",
+        "task_area": "Evaluating a marketing campaign's effectiveness"
+    },
+    {
+        "domain": "Creative and Media Industries",
+        "task_area": "Creating a pitch deck for a new TV show"
+    },
+    {
+        "domain": "Creative and Media Industries",
+        "task_area": "Writing engaging video scripts for educational content"
+    },
+    {
+        "domain": "Environmental Science and Sustainability",
+        "task_area": "Simulating carbon footprint reduction strategies"
+    },
+    {
+        "domain": "Environmental Science and Sustainability",
+        "task_area": "Developing a conservation plan for endangered species"
+    },
+    {
+        "domain": "Environmental Science and Sustainability",
+        "task_area": "Predicting the effects of deforestation on biodiversity"
+    },
+    {
+        "domain": "Environmental Science and Sustainability",
+        "task_area": "Creating a water resource management plan for arid regions"
+    },
+    {
+        "domain": "Environmental Science and Sustainability",
+        "task_area": "Evaluating the impact of recycling policies"
+    },
+    {
+        "domain": "Environmental Science and Sustainability",
+        "task_area": "Modeling the spread of pollutants in ecosystems"
+    },
+    {
+        "domain": "Environmental Science and Sustainability",
+        "task_area": "Simulating sustainable agricultural practices"
+    },
+    {
+        "domain": "Environmental Science and Sustainability",
+        "task_area": "Analyzing the impact of climate change on coastal cities"
+    },
+    {
+        "domain": "Environmental Science and Sustainability",
+        "task_area": "Developing an energy efficiency program for households"
+    },
+    {
+        "domain": "Environmental Science and Sustainability",
+        "task_area": "Predicting the economic impacts of transitioning to green energy"
+    },
+    {
+        "domain": "Logistics and Operations",
+        "task_area": "Optimizing a warehouse layout for efficiency"
+    },
+    {
+        "domain": "Logistics and Operations",
+        "task_area": "Designing a last-mile delivery system for e-commerce"
+    },
+    {
+        "domain": "Logistics and Operations",
+        "task_area": "Simulating supply chain disruptions during a crisis"
+    },
+    {
+        "domain": "Logistics and Operations",
+        "task_area": "Planning a transportation route for cost minimization"
+    },
+    {
+        "domain": "Logistics and Operations",
+        "task_area": "Developing a resource allocation algorithm"
+    },
+    {
+        "domain": "Logistics and Operations",
+        "task_area": "Evaluating the scalability of an operations model"
+    },
+    {
+        "domain": "Logistics and Operations",
+        "task_area": "Predicting demand fluctuations in inventory management"
+    },
+    {
+        "domain": "Logistics and Operations",
+        "task_area": "Creating an optimized scheduling system for workers"
+    },
+    {
+        "domain": "Logistics and Operations",
+        "task_area": "Designing a fleet management system for delivery trucks"
+    },
+    {
+        "domain": "Logistics and Operations",
+        "task_area": "Developing disaster response logistics for a humanitarian organization"
+    },
+    {
+        "domain": "Cybersecurity",
+        "task_area": "Designing a network security protocol"
+    },
+    {
+        "domain": "Cybersecurity",
+        "task_area": "Analyzing the vulnerability of encryption methods"
+    },
+    {
+        "domain": "Cybersecurity",
+        "task_area": "Simulating a cyberattack to test defenses"
+    },
+    {
+        "domain": "Cybersecurity",
+        "task_area": "Creating a security audit plan for a corporation"
+    },
+    {
+        "domain": "Cybersecurity",
+        "task_area": "Evaluating the impact of a data breach on operations"
+    },
+    {
+        "domain": "Cybersecurity",
+        "task_area": "Designing a two-factor authentication system"
+    },
+    {
+        "domain": "Cybersecurity",
+        "task_area": "Developing an incident response plan for a cyberattack"
+    },
+    {
+        "domain": "Cybersecurity",
+        "task_area": "Analyzing threats from phishing attacks"
+    },
+    {
+        "domain": "Cybersecurity",
+        "task_area": "Explaining public key infrastructure to non-technical users"
+    },
+    {
+        "domain": "Cybersecurity",
+        "task_area": "Designing an intrusion detection system"
+    }
+]
