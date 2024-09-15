@@ -1,69 +1,59 @@
-from flask import Flask, request, jsonify
-from raspberry import process_query  # Import the process_query function from raspberry.py
+from flask import Flask, request, jsonify, Response
+from raspberry import process_query, load_thought_chains, construct_chain
 from ai_handler import ai_gen
+import json
 
 app = Flask(__name__)
 
-# Try to import and use CORS, but continue without it if not available
 try:
     from flask_cors import CORS
+
     CORS(app)
     print("CORS has been enabled")
 except ImportError:
     print("CORS is not available. The API may not work correctly with frontend applications on different domains.")
 
-# Initialize an empty memory list as a global variable
 memory = []
 
-# Chat endpoint that processes user queries using raspberry.py
-@app.route('/api/chat', methods=['POST'])
+
+def stream_thought_process(user_query, thought_chain, memory):
+    intermediate_output = ""
+    print(f"Starting thought process for query: {user_query}")  # Add this line
+
+    for step in thought_chain:
+        prompt = f"The user has asked: '{user_query}'. Consider the following step: '{step}'."
+        response = ai_gen([{"role": "user", "content": prompt}])
+        intermediate_output += f"\nStep '{step}': {response}"
+
+        print(f"Streaming thought: {step}")  # Add this line
+        yield f"data: {json.dumps({'thought': step, 'response': response})}\n\n"
+
+    print(f"Streaming final response")  # Add this line
+    yield f"data: {json.dumps({'final_response': intermediate_output})}\n\n"
+
+
+@app.route('/api/chat', methods=['GET'])  # Changed to GET
 def chat():
-    data = request.json
-    print(f"Received data: {data}")  # Log the received data
-
-    if not data:
-        print("No data received in request.")
-        return jsonify({'error': 'No data received'}), 400
-
-    # Extract the latest user message from the messages array
-    messages = data.get('messages', [])
-    user_message = None
-
-    for message in messages:
-        if message['role'] == 'user':
-            user_message = message['content']
+    user_message = request.args.get('message')  # Get message from query parameters
+    print(f"Received message: {user_message}")  # Add this line
 
     if not user_message:
         print("No user message provided in the data.")
         return jsonify({'error': 'No user message provided'}), 400
 
     try:
-        global memory  # Use the global memory list
-        response, chain_name, thought_chain, all_outputs, memory = process_query(user_message, memory)
+        global memory
 
-        return jsonify({
-            'response': response,
-            'thought_chain': {
-                'name': chain_name,
-                'steps': thought_chain
-            }
-        })
+        thought_chains = load_thought_chains()
+        thought_chain, chain_name = construct_chain(thought_chains, None)
+
+        print(f"Constructed thought chain: {thought_chain}")  # Add this line
+
+        return Response(stream_thought_process(user_message, thought_chain, memory),
+                        content_type='text/event-stream')
     except Exception as e:
-        print(f"Error processing query: {e}")  # Log the error in the terminal
+        print(f"Error processing query: {e}")
         return jsonify({'error': f"An error occurred: {str(e)}"}), 500
-
-# Test endpoint for basic AI interaction
-@app.route('/api/test', methods=['GET'])
-def test():
-    test_messages = [
-        {"role": "user", "content": "Hello! Can you tell me a short joke?"}
-    ]
-
-    response = ai_gen(test_messages)
-
-    return jsonify({
-        'response': response
-    })
 
 
 if __name__ == '__main__':

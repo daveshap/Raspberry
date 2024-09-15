@@ -1,5 +1,3 @@
-/* App.css */
-
 /* Global styling */
 * {
   margin: 0;
@@ -78,6 +76,32 @@ html, body {
   border-bottom-right-radius: 0;
 }
 
+/* Animating the current thought */
+.thought-animation {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  animation: fadeInOut 1.5s infinite;  /* Animate in and out */
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Styling for thought history */
+.thought-history {
+  list-style-type: disc;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.thought-step {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
 .message.assistant .message-content {
   background-color: #022F2F; /* You can go for a lighter shade like #FF6F6F if you want less intensity */
   color: #FFFFFF;
@@ -104,31 +128,6 @@ input[type="text"] {
   border-radius: 30px;
   color: #FFFFFF;
 }
-
-/* Styling for the Thought Chain */
-.message.assistant-thought-chain .message-content {
-  background-color: #2C2C2C; /* Dark background for the thought chain */
-  color: #EEEEEE;
-  padding: 20px;
-  border-radius: 12px;
-  margin-top: 15px; /* Add space between the response and the thought chain */
-}
-
-.message.assistant-thought-chain ul {
-  padding-left: 25px; /* Make bullet points indented */
-  list-style-type: disc;
-}
-
-.message.assistant-thought-chain ul li {
-  margin-bottom: 10px; /* Space between thought chain steps */
-  font-size: 18px; /* Larger text for readability */
-}
-
-.message.assistant-thought-chain p {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
 
 input[type="text"]::placeholder {
   color: #9E9E9E;

@@ -26,11 +26,11 @@ const ChatMessage = ({ message, role }) => {
   );
 };
 
-
-
 function App() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
+  const [currentThought, setCurrentThought] = useState('');  // Track the current thought type
+  const [thoughtHistory, setThoughtHistory] = useState([]);  // Track all the thought steps
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
@@ -48,33 +48,50 @@ function App() {
     setMessages([...messages, userMessage]);
     setInput('');
     setIsLoading(true);
+    setThoughtHistory([]);  // Clear previous thought history
 
     try {
-  const response = await fetch('http://localhost:5000/api/chat', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ messages: [{ role: 'user', content: input }] }),
-  });
+      const eventSource = new EventSource(`http://localhost:5000/api/chat?message=${encodeURIComponent(input)}`);
 
-  if (!response.ok) throw new Error('Network response was not ok');
+      eventSource.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+        console.log("Received Event: ", data);  // Add this for debugging
 
-  const data = await response.json();
+        // Update current thought process
+        if (data.thought) {
+            console.log("Updating thought:", data.thought);  // Add this line
+            setCurrentThought(data.thought);  // Display the current thought type
+            setThoughtHistory((prev) => [...prev, data.thought]);  // Store the thought step for history
+        }
 
-  setMessages((prev) => [
-    ...prev,
-    { role: 'assistant', content: data.response },  // AI Response
-    { role: 'assistant-thought-chain', content: data.thought_chain.steps }  // Thought Chain List
-  ]);
-} catch (error) {
-  console.error('Error:', error);
-  setMessages((prev) => [
-    ...prev,
-    { role: 'assistant', content: 'Sorry, there was an error processing your request.' },
-  ]);
-} finally {
-  setIsLoading(false);
-}
+        // Handle final response
+        if (data.final_response) {
+            console.log("Received final response");  // Add this line
+            setMessages((prev) => [...prev, { role: 'assistant', content: data.final_response }]);
+            setIsLoading(false);
+            setCurrentThought('');  // Clear the current thought display after completion
+            eventSource.close();
+        }
+      };
 
+      eventSource.onerror = (error) => {
+        console.error("EventSource failed:", error);
+        setIsLoading(false);
+        setMessages((prev) => [
+          ...prev,
+          { role: 'assistant', content: 'Sorry, there was an error processing your request.' },
+        ]);
+        eventSource.close();
+      };
+
+    } catch (error) {
+      console.error('Error:', error);
+      setMessages((prev) => [
+        ...prev,
+        { role: 'assistant', content: 'Sorry, there was an error processing your request.' },
+      ]);
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -87,9 +104,19 @@ function App() {
           ))}
           {isLoading && (
             <div className="message assistant">
-              <div className="message-content">
-                <p>Raspberry is typing...</p>
-              </div>
+                <div className="message-content">
+                    <p>Raspberry is thinking...</p>
+                    {currentThought && (
+                        <div className="thought-animation">
+                            <p><strong>Current Thought:</strong> {currentThought}</p>
+                        </div>
+                    )}
+                    <ul className="thought-history">
+                        {thoughtHistory.map((thought, index) => (
+                            <li key={index} className="thought-step">{thought}</li>
+                        ))}
+                    </ul>
+                </div>
             </div>
           )}
           <div ref={messagesEndRef} />
