@@ -25,22 +25,58 @@ def construct_chain(thought_chains, thought_map):
 
 
 # Build a prompt based on the constructed thought chain
-def build_prompt(user_query, thought_chain):
-    # Start the prompt with the user query
-    prompt = f"The user has asked: '{user_query}'. To guide your response, consider the following steps in your reasoning process:\n\n"
+def build_prompt(user_query, step_description, previous_output=None, memory=[]):
+    # Start the prompt with the memory, if available
+    prompt = "The following is a conversation between a user and an AI.\n\n"
 
-    # Add steps from the thought chain
-    for step in thought_chain:
-        prompt += f"- {step}: Please incorporate this step into your reasoning.\n"
+    for exchange in memory:
+        prompt += f"User: {exchange['user']}\nAI: {exchange['ai']}\n"
 
-    # Conclude the prompt
-    prompt += "\nPlease provide a well-reasoned response incorporating these steps."
+    # Now, add the current query
+    if previous_output:
+        prompt += f"\nThe user has asked: '{user_query}'. Here is what we have so far: '{previous_output}'.\n"
+    else:
+        prompt += f"\nThe user has asked: '{user_query}'.\n"
+
+    prompt += f"Now, consider the following step: '{step_description}'. Please provide your reasoning based on this step."
 
     return prompt
 
 
+# Process each thought in the chain sequentially with memory
+def process_thought_chain(user_query, thought_chain, memory):
+    intermediate_output = ""
+    all_outputs = []  # To store the output of each step in the chain
+
+    for step in thought_chain:
+        # Build the prompt for the current step, incorporating memory
+        prompt = build_prompt(user_query, step, intermediate_output, memory)
+
+        # Call the AI model to process this step
+        response = ai_gen([{"role": "user", "content": prompt}])
+
+        # Append the response to intermediate_output for the next step
+        intermediate_output += f"\nStep '{step}': {response}"
+        all_outputs.append(intermediate_output)  # Keep track of each step's output
+
+    # Return the final output after all steps
+    return intermediate_output, all_outputs
+
+
+# Function to manage memory: add new conversation and prune old ones if needed
+def update_memory(memory, user_query, ai_response, max_memory=5):
+    # Add the latest user query and AI response to memory
+    memory.append({"user": user_query, "ai": ai_response})
+
+    # Prune memory if it exceeds the max allowed exchanges
+    if len(memory) > max_memory:
+        memory.pop(0)  # Remove the oldest exchange to keep memory size in check
+
+    return memory
+
+
 # Main function to process the user query and output the response
-def process_query(user_query):
+def process_query(user_query, memory):
     # Load the thought chains and thought map
     thought_chains = load_thought_chains()
     thought_map = load_thought_map()
@@ -48,31 +84,10 @@ def process_query(user_query):
     # Construct the best matching thought chain
     thought_chain, chain_name = construct_chain(thought_chains, thought_map)
 
-    # Build a prompt based on the thought chain
-    prompt = build_prompt(user_query, thought_chain)
+    # Process the thought chain step-by-step with memory
+    final_response, all_outputs = process_thought_chain(user_query, thought_chain, memory)
 
-    # Call Claude using the ai_handler function and pass the constructed prompt
-    response = ai_gen([{"role": "user", "content": prompt}])
+    # Update memory with the new user query and final response
+    memory = update_memory(memory, user_query, final_response)
 
-    return response, chain_name, thought_chain
-
-
-# Looping main function for continuous user input and testing
-if __name__ == "__main__":
-    print("Welcome to the Raspberry. Type 'exit' to quit.\n")
-
-    while True:
-        # Get user input
-        user_query = input("Enter your query: ")
-
-        if user_query.lower() == 'exit':
-            print("Exiting Chain of Thought Tester.")
-            break
-
-        # Process the query and output the response
-        response, chain_name, thought_chain = process_query(user_query)
-
-        # Display the response and the chain used
-        print(f"\nClaude's Response:\n{response}\n")
-        print(f"Thought Chain Used: {chain_name}")
-        print(f"Chain Steps: {thought_chain}\n")
+    return final_response, chain_name, thought_chain, all_outputs, memory

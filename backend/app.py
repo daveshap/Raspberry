@@ -12,6 +12,9 @@ try:
 except ImportError:
     print("CORS is not available. The API may not work correctly with frontend applications on different domains.")
 
+# Initialize an empty memory list as a global variable
+memory = []
+
 # Chat endpoint that processes user queries using raspberry.py
 @app.route('/api/chat', methods=['POST'])
 def chat():
@@ -35,7 +38,9 @@ def chat():
         return jsonify({'error': 'No user message provided'}), 400
 
     try:
-        response, chain_name, thought_chain = process_query(user_message)
+        global memory  # Use the global memory list
+        response, chain_name, thought_chain, all_outputs, memory = process_query(user_message, memory)
+
         return jsonify({
             'response': response,
             'thought_chain': {
@@ -46,8 +51,6 @@ def chat():
     except Exception as e:
         print(f"Error processing query: {e}")  # Log the error in the terminal
         return jsonify({'error': f"An error occurred: {str(e)}"}), 500
-
-
 
 # Test endpoint for basic AI interaction
 @app.route('/api/test', methods=['GET'])

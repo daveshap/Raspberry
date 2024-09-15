@@ -1,13 +1,32 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 
-const ChatMessage = ({ message, role }) => (
-  <div className={`message ${role}`}>
-    <div className="message-content">
-      <p>{message}</p>
+const ChatMessage = ({ message, role }) => {
+  if (role === 'assistant-thought-chain') {
+    return (
+      <div className={`message ${role}`}>
+        <div className="message-content">
+          <p><strong>Thought Chain:</strong></p>
+          <ul>
+            {message.map((step, index) => (
+              <li key={index}>{step}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`message ${role}`}>
+      <div className="message-content">
+        <p>{message}</p>
+      </div>
     </div>
-  </div>
-);
+  );
+};
+
+
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -31,29 +50,31 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: [{ role: 'user', content: input }] })
+  const response = await fetch('http://localhost:5000/api/chat', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ messages: [{ role: 'user', content: input }] }),
+  });
 
-    });
+  if (!response.ok) throw new Error('Network response was not ok');
 
+  const data = await response.json();
 
-      if (!response.ok) throw new Error('Network response was not ok');
+  setMessages((prev) => [
+    ...prev,
+    { role: 'assistant', content: data.response },  // AI Response
+    { role: 'assistant-thought-chain', content: data.thought_chain.steps }  // Thought Chain List
+  ]);
+} catch (error) {
+  console.error('Error:', error);
+  setMessages((prev) => [
+    ...prev,
+    { role: 'assistant', content: 'Sorry, there was an error processing your request.' },
+  ]);
+} finally {
+  setIsLoading(false);
+}
 
-      const data = await response.json();
-      setMessages((prev) => [...prev, { role: 'assistant', content: data.response }]);
-
-
-    } catch (error) {
-      console.error('Error:', error);
-      setMessages((prev) => [
-        ...prev,
-        { role: 'assistant', content: 'Sorry, there was an error processing your request.' },
-      ]);
-    } finally {
-      setIsLoading(false);
-    }
   };
 
   return (
