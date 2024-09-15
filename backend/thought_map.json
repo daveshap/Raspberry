@@ -1,0 +1,176 @@
+{
+  "thought_types": [
+    {
+      "name": "Analyze Problem",
+      "action": "Break the problem into smaller components and systematically analyze each part."
+    },
+    {
+      "name": "Evaluate Critically",
+      "action": "Assess the information, assumptions, and arguments for validity and relevance."
+    },
+    {
+      "name": "Generate Creative Solutions",
+      "action": "Think of novel ideas or alternative solutions to the current problem."
+    },
+    {
+      "name": "Explore Alternative Patterns",
+      "action": "Look for unconventional solutions by recognizing patterns or thinking laterally."
+    },
+    {
+      "name": "Apply General Principle",
+      "action": "Use established general rules or principles to deduce a specific solution."
+    },
+    {
+      "name": "Draw General Conclusions",
+      "action": "Observe specific details or cases and form a broader conclusion from them."
+    },
+    {
+      "name": "Consider Hypothetical Scenarios",
+      "action": "Explore possible outcomes by imagining 'what if' scenarios to guide decision-making."
+    },
+    {
+      "name": "Show Empathy",
+      "action": "Consider the emotional state or perspective of the other party to maintain or improve communication."
+    },
+    {
+      "name": "Reflect on Prior Conversations",
+      "action": "Think back on previous exchanges to gain new insights or continue the conversation effectively."
+    },
+    {
+      "name": "Clarify Ambiguity",
+      "action": "Ask clarifying questions or rephrase the message to ensure mutual understanding."
+    },
+    {
+      "name": "Listen Carefully",
+      "action": "Focus on the speaker’s words to accurately understand and process the message."
+    },
+    {
+      "name": "Combine Ideas Collaboratively",
+      "action": "Integrate input from multiple parties to form a cohesive idea or plan."
+    },
+    {
+      "name": "Resolve Conflict",
+      "action": "Identify tension points and propose solutions that can de-escalate or resolve disputes."
+    },
+    {
+      "name": "Mitigate Risks",
+      "action": "Prioritize safety by identifying and reducing potential risks or dangers."
+    },
+    {
+      "name": "Detect Threats",
+      "action": "Scan for and identify possible threats that could compromise security or stability."
+    },
+    {
+      "name": "Develop Backup Plan",
+      "action": "Create contingency plans in case the current course of action fails."
+    },
+    {
+      "name": "Prevent Future Problems",
+      "action": "Anticipate future risks and take steps to prevent issues from arising."
+    },
+    {
+      "name": "Secure Vulnerable Areas",
+      "action": "Focus on protecting weak spots or assets from potential harm or attack."
+    },
+    {
+      "name": "Reflect on Thinking Process",
+      "action": "Evaluate and become aware of current cognitive processes, identifying any biases or gaps."
+    },
+    {
+      "name": "Reevaluate Assumptions",
+      "action": "Reconsider earlier conclusions or assumptions based on new information or insights."
+    },
+    {
+      "name": "Question Your Own Ideas",
+      "action": "Challenge the accuracy or completeness of your own thoughts to ensure correctness."
+    },
+    {
+      "name": "Adapt to New Information",
+      "action": "Change the approach or perspective based on new or changing information."
+    },
+    {
+      "name": "Stay Mindful",
+      "action": "Remain present and aware of the current thought process without letting distractions or emotional reactions interfere."
+    },
+    {
+      "name": "Explore New Ideas",
+      "action": "Engage in curiosity-driven exploration of new concepts or ideas."
+    },
+    {
+      "name": "Ask Questions",
+      "action": "Formulate and ask questions to acquire more knowledge or fill gaps in understanding."
+    },
+    {
+      "name": "Experiment with Solutions",
+      "action": "Use trial and error to test different approaches and learn from the results."
+    },
+    {
+      "name": "Recognize Patterns",
+      "action": "Identify recurring themes or patterns in data or behaviors."
+    },
+    {
+      "name": "Reflect on Experience",
+      "action": "Learn from past experiences by analyzing what went well and what could be improved."
+    },
+    {
+      "name": "Make Quick Decision",
+      "action": "Choose a course of action quickly without extensive deliberation, when necessary."
+    },
+    {
+      "name": "Weigh Pros and Cons",
+      "action": "Carefully evaluate the positive and negative aspects before deciding."
+    },
+    {
+      "name": "Trust Intuition",
+      "action": "Rely on gut feelings or immediate insights to guide decision-making."
+    },
+    {
+      "name": "Perform Cost-Benefit Analysis",
+      "action": "Compare the benefits and costs of each option to make an informed choice."
+    },
+    {
+      "name": "Consider Ethical Implications",
+      "action": "Evaluate the moral consequences of potential decisions before proceeding."
+    },
+    {
+      "name": "Use Heuristic",
+      "action": "Apply mental shortcuts or rules of thumb to make a decision quickly and efficiently."
+    },
+    {
+      "name": "Focus on Positive Outcomes",
+      "action": "Direct thoughts toward potential successes and positive possibilities."
+    },
+    {
+      "name": "Consider Negative Risks",
+      "action": "Think about the potential negative outcomes and prepare for them."
+    },
+    {
+      "name": "Act with Caution Due to Fear",
+      "action": "Allow fear to guide a cautious and conservative approach to decision-making."
+    },
+    {
+      "name": "Adapt to Challenges",
+      "action": "Focus on resilience and adaptability when facing difficulties or setbacks."
+    },
+    {
+      "name": "Address Stressors",
+      "action": "Identify the source of stress and take action to reduce or manage its impact."
+    },
+    {
+      "name": "Link New Information to Memories",
+      "action": "Form connections between new data and existing memories to aid understanding."
+    },
+    {
+      "name": "Retrieve Relevant Information",
+      "action": "Recall past knowledge or experiences that apply to the current situation."
+    },
+    {
+      "name": "Recognize Familiar Patterns",
+      "action": "Identify familiar elements or patterns based on previous encounters."
+    },
+    {
+      "name": "Rebuild Incomplete Memories",
+      "action": "Fill in gaps in memory by reconstructing past events or ideas."
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "thought_chains": [
+    {
+      "name": "Basic Problem-Solving Chain",
+      "goal": "Guide the AI through a structured problem-solving process.",
+      "chain": [
+        "Analyze Problem",
+        "Evaluate Critically",
+        "Generate Creative Solutions",
+        "Explore Alternative Patterns",
+        "Apply General Principle",
+        "Draw General Conclusions",
+        "Consider Hypothetical Scenarios"
+      ]
+    },
+    {
+      "name": "Conversation Resolution Chain",
+      "goal": "Help the AI resolve conflicts or misunderstandings in conversations.",
+      "chain": [
+        "Listen Carefully",
+        "Show Empathy",
+        "Clarify Ambiguity",
+        "Combine Ideas Collaboratively",
+        "Resolve Conflict",
+        "Reflect on Prior Conversations"
+      ]
+    },
+    {
+      "name": "Security & Risk Assessment Chain",
+      "goal": "Assist the AI in assessing and mitigating risks or threats.",
+      "chain": [
+        "Mitigate Risks",
+        "Detect Threats",
+        "Develop Backup Plan",
+        "Prevent Future Problems",
+        "Secure Vulnerable Areas"
+      ]
+    },
+    {
+      "name": "Self-Reflection & Cognitive Flexibility Chain",
+      "goal": "Guide the AI through self-reflective thinking and adapting to new information.",
+      "chain": [
+        "Reflect on Thinking Process",
+        "Reevaluate Assumptions",
+        "Question Your Own Ideas",
+        "Adapt to New Information",
+        "Stay Mindful"
+      ]
+    },
+    {
+      "name": "Learning & Exploration Chain",
+      "goal": "Encourage the AI to engage in learning and exploration for knowledge discovery.",
+      "chain": [
+        "Explore New Ideas",
+        "Ask Questions",
+        "Experiment with Solutions",
+        "Recognize Patterns",
+        "Reflect on Experience"
+      ]
+    },
+    {
+      "name": "Decision-Making Chain",
+      "goal": "Guide the AI through a decision-making process, considering multiple factors.",
+      "chain": [
+        "Make Quick Decision",
+        "Weigh Pros and Cons",
+        "Trust Intuition",
+        "Perform Cost-Benefit Analysis",
+        "Consider Ethical Implications",
+        "Use Heuristic"
+      ]
+    },
+    {
+      "name": "Emotional & Psychological Chain",
+      "goal": "Help the AI manage emotions and psychological factors in its reasoning process.",
+      "chain": [
+        "Focus on Positive Outcomes",
+        "Consider Negative Risks",
+        "Act with Caution Due to Fear",
+        "Adapt to Challenges",
+        "Address Stressors"
+      ]
+    },
+    {
+      "name": "Memory & Recall Chain",
+      "goal": "Assist the AI in accessing and using past experiences and information.",
+      "chain": [
+        "Link New Information to Memories",
+        "Retrieve Relevant Information",
+        "Recognize Familiar Patterns",
+        "Rebuild Incomplete Memories"
+      ]
+    }
+  ]
+}

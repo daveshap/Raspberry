@@ -1,0 +1,167 @@
+/* App.css */
+
+/* Global styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Ensure no extra scrolling */
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+  color: #FFFFFF;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Use full viewport height */
+  width: 100vw;  /* Use full viewport width */
+}
+
+.top-bar {
+  background-color: #1F1F1F;
+  padding: 20px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  border-bottom: 1px solid #2C2C2C;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Fill available space */
+  width: 100%; /* Ensure full width */
+  overflow: hidden; /* Prevent scrolling here */
+}
+
+.messages-container {
+  flex-grow: 1; /* Fill remaining space */
+  overflow-y: auto; /* Enable scrolling for messages */
+  padding: 20px 0;
+  width: 100%; /* Take up full width */
+}
+
+.message {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.message.user {
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.message.assistant {
+  justify-content: flex-start;
+  padding-left: 20px; /* Add padding to the left side of assistant messages */
+}
+
+.message-content {
+  max-width: 60%; /* Limit message width */
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 20px;
+  line-height: 2;
+}
+
+.message.user .message-content {
+  background-color: #2E2E2E;
+  color: #FFFFFF;
+  border-bottom-right-radius: 0;
+}
+
+.message.assistant .message-content {
+  background-color: #D32F2F;
+  color: #FFFFFF;
+  border-bottom-left-radius: 32;
+}
+
+.input-form {
+  display: flex;
+  padding: 15px;
+  background-color: #1F1F1F;
+  border-top: 1px solid #2C2C2C;
+  width: 100%; /* Ensure full width */
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 15px 20px;
+  font-size: 18px;
+  background-color: #2E2E2E;
+  border: none;
+  border-radius: 30px;
+  color: #FFFFFF;
+}
+
+input[type="text"]::placeholder {
+  color: #9E9E9E;
+}
+
+button {
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+button svg {
+  fill: currentColor;
+  width: 28px;
+  height: 28px;
+}
+
+button:disabled {
+  color: #666666;
+  cursor: not-allowed;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1F1F1F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 5px;
+}
+
+@media (max-width: 800px) {
+  .input-form {
+    padding: 10px;
+  }
+
+  .message-content {
+    max-width: 75%; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .message-content {
+    max-width: 85%; /* Adjust for even smaller screens */
+  }
+
+  .top-bar {
+    font-size: 24px;
+  }
+
+  input[type="text"] {
+    font-size: 16px;
+  }
+
+  .input-form {
+    padding: 10px;
+  }
+}
