@@ -1,4 +1,15 @@
+<div align="center">
+
 # Raspberry
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/daveshap/Raspberry?style=social)](https://github.com/daveshap/Raspberry/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/daveshap/Raspberry?style=social)](https://github.com/daveshap/Raspberry/network/members)
+[![GitHub watchers](https://img.shields.io/github/watchers/daveshap/Raspberry?style=social)](https://github.com/daveshap/Raspberry/watchers)
+
+<img src="media/think.png" alt="Think" width="100%"/>
+
+</div>
 
 ## Mission
 
