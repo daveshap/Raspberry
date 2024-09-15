@@ -2,21 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 
 const ChatMessage = ({ message, role }) => {
-  if (role === 'assistant-thought-chain') {
-    return (
-      <div className={`message ${role}`}>
-        <div className="message-content">
-          <p><strong>Thought Chain:</strong></p>
-          <ul>
-            {message.map((step, index) => (
-              <li key={index}>{step}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className={`message ${role}`}>
       <div className="message-content">
@@ -29,8 +14,8 @@ const ChatMessage = ({ message, role }) => {
 function App() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
-  const [currentThought, setCurrentThought] = useState('');  // Track the current thought type
-  const [thoughtHistory, setThoughtHistory] = useState([]);  // Track all the thought steps
+  const [currentThought, setCurrentThought] = useState('');
+  const [thoughtHistory, setThoughtHistory] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
@@ -48,29 +33,25 @@ function App() {
     setMessages([...messages, userMessage]);
     setInput('');
     setIsLoading(true);
-    setThoughtHistory([]);  // Clear previous thought history
+    setThoughtHistory([]);
 
     try {
       const eventSource = new EventSource(`http://localhost:5000/api/chat?message=${encodeURIComponent(input)}`);
 
       eventSource.onmessage = (event) => {
         const data = JSON.parse(event.data);
-        console.log("Received Event: ", data);  // Add this for debugging
+        console.log("Received Event: ", data);
 
-        // Update current thought process
         if (data.thought) {
-            console.log("Updating thought:", data.thought);  // Add this line
-            setCurrentThought(data.thought);  // Display the current thought type
-            setThoughtHistory((prev) => [...prev, data.thought]);  // Store the thought step for history
+          setCurrentThought(data.thought);
+          setThoughtHistory((prev) => [...prev, data.thought]);
         }
 
-        // Handle final response
         if (data.final_response) {
-            console.log("Received final response");  // Add this line
-            setMessages((prev) => [...prev, { role: 'assistant', content: data.final_response }]);
-            setIsLoading(false);
-            setCurrentThought('');  // Clear the current thought display after completion
-            eventSource.close();
+          setMessages((prev) => [...prev, { role: 'assistant', content: data.final_response }]);
+          setIsLoading(false);
+          setCurrentThought('');
+          eventSource.close();
         }
       };
 
@@ -111,11 +92,6 @@ function App() {
                             <p><strong>Current Thought:</strong> {currentThought}</p>
                         </div>
                     )}
-                    <ul className="thought-history">
-                        {thoughtHistory.map((thought, index) => (
-                            <li key={index} className="thought-step">{thought}</li>
-                        ))}
-                    </ul>
                 </div>
             </div>
           )}

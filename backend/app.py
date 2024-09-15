@@ -18,36 +18,28 @@ memory = []
 
 def stream_thought_process(user_query, thought_chain, memory):
     intermediate_output = ""
-    print(f"Starting thought process for query: {user_query}")  # Add this line
-
     for step in thought_chain:
         prompt = f"The user has asked: '{user_query}'. Consider the following step: '{step}'."
         response = ai_gen([{"role": "user", "content": prompt}])
         intermediate_output += f"\nStep '{step}': {response}"
+        yield f"data: {json.dumps({'thought': step})}\n\n"
 
-        print(f"Streaming thought: {step}")  # Add this line
-        yield f"data: {json.dumps({'thought': step, 'response': response})}\n\n"
+    # Generate final response without appended thoughts
+    final_prompt = f"Based on the analysis: {intermediate_output}\nProvide a concise answer to the user's question: '{user_query}'. Do not include the step-by-step analysis in your response."
+    final_response = ai_gen([{"role": "user", "content": final_prompt}])
+    yield f"data: {json.dumps({'final_response': final_response})}\n\n"
 
-    print(f"Streaming final response")  # Add this line
-    yield f"data: {json.dumps({'final_response': intermediate_output})}\n\n"
 
-
-@app.route('/api/chat', methods=['GET'])  # Changed to GET
+@app.route('/api/chat', methods=['GET'])
 def chat():
-    user_message = request.args.get('message')  # Get message from query parameters
-    print(f"Received message: {user_message}")  # Add this line
-
+    user_message = request.args.get('message')
     if not user_message:
-        print("No user message provided in the data.")
         return jsonify({'error': 'No user message provided'}), 400
 
     try:
         global memory
-
         thought_chains = load_thought_chains()
         thought_chain, chain_name = construct_chain(thought_chains, None)
-
-        print(f"Constructed thought chain: {thought_chain}")  # Add this line
 
         return Response(stream_thought_process(user_message, thought_chain, memory),
                         content_type='text/event-stream')

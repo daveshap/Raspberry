@@ -38,7 +38,7 @@ def build_prompt(user_query, step_description, previous_output=None, memory=[]):
     else:
         prompt += f"\nThe user has asked: '{user_query}'.\n"
 
-    prompt += f"Now, consider the following step: '{step_description}'. Please provide your reasoning based on this step."
+    prompt += f"Now, consider the following step: '{step_description}'. Now use the step to guide your thinking."
 
     return prompt
 
