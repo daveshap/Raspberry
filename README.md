@@ -17,8 +17,18 @@ Create an open source toy dataset for finetuning LLMs with reasoning abilities
 
 ## Method
 
+Below is the general process that we are going to follow. 
+
 1. **Synthesize complex user queries:** We will start by synthesizing 500 distinct user queries across a variety of challenging domains and tasks. These user queries will require a variety of skills and abilities, such as math, coding, logic, reasoning, and planning. They will span numerous domains, from medicine and science, to software development, and other economically valuable sectors. After initial synthesis, we will use rubrics and similar grading techniques to measure and improve the samples. 
 2. **Synthesize CoT and Self-Critique data:** The next phase will be to use a variety of automated prompt strategies to synthesize answers to the user queries. Models, such as Claude, have already demonstrated the ability to use CoT reasoning when correctly prompted. Furthermore, these models can self-critique and self-correct when prompted correctly.
 3. **Clean and Rectify Samples:** By using rubrics and similar grading techniques, we will assess the quality of the CoT and self-critique samples. Furthermore, using a series of prompts, we will clean these samples such that they represent a singular, coherent response, thus ideal for a "single shot reasoner" dataset.
 4. **Finetune an LLM with the toy dataset:** The first model will be a pilot, more of a proof of concept. We will test it and see how it performs, and iterate accordingly.
 5. **Scale Up and Seek Funding:** Assuming we get acceptable results, we might try to seek funding for a larger dataset with more robust testing and benchmarking. We will need to ensure that this open source dataset covers many tasks and domains, and that it is easily usable and adaptable to multiple frameworks and architectures. Likely try and kickstart a project from Manifund. https://manifund.org/
+
+## Outcomes
+
+Here are the primary outcomes we are looking to achieve. 
+
+1. **Open Source Finetuning Dataset(s):** We would like to produce at least one dataset for finetuning models to approximate CoT, MCTS, and Reflection performance.
+2. **Near-SOTA Benchmarks:** We would like to demonstrate near-SOTA performance on reasoning and other benchmarks. We're not trying to achieve SOTA as we are much less funded.
+3. **Open Source RL-trained Model:** Ideally, we'll use reinforcement learning to publish the weights of an open source model. 
